@@ -51,7 +51,7 @@ def mergedd(s):
     # %%
     # reading the state wise shapefile of India in a GeoDataFrame and preview it
 
-    fp = "E:\Igismap\Indian_States.shp"
+    fp = "Igismap\Indian_States.shp"
     map_df = gpd.read_file(fp)
     #map_df.head()
     #map_df
@@ -110,7 +110,7 @@ def mergedd(s):
     # %%
     # We save the output as a PNG image
 
-    fig.savefig("F:\dash-nlp-master\State_wise.png", dpi=100)
+    fig.savefig("/State_wise.png", dpi=100)
     for i in df['State']:
         return i
 def plotly_wordclou(df):
@@ -129,7 +129,7 @@ def plotly_wordclou(df):
     # %%
     # reading the state wise shapefile of India in a GeoDataFrame and preview it
 
-    fp = "E:\Igismap\Indian_States.shp"
+    fp = "Igismap\Indian_States.shp"
     map_df = gpd.read_file(fp)
     #map_df.head()
     #map_df

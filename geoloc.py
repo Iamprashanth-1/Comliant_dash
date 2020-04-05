@@ -4,14 +4,12 @@ import pandas as pd
 import pathlib
 from collections import Counter
 import json
-#in_cities = pd.read_csv("E:\in.csv")
-#print(us_cities)
+
 import os
 import uuid
+import plotly.graph_objects as go
 
-
-import plotly.express as px
-df= pd.read_csv('F:\dash-nlp-master\data\customer29.csv')
+df= pd.read_csv('data/customer29.csv')
 s=[]
 for i in df['State']:
         s.append(i)
@@ -45,31 +43,45 @@ with open(filename, 'w') as f:
 
 #print(tempfile)
         
-in_cities = pd.read_json("data/in.json")
+df = pd.read_json("data/in1.json", orient='records')
 
             
     #in_cities[population]
 #print(in_cities)
 
-fig2 = px.scatter_mapbox(in_cities, lat="lat", lon="lng", hover_name="admin", hover_data=["compliants"],
-                        color_discrete_sequence=["blue"], zoom=4, height=700)
-fig2.update_layout(
-    mapbox_style="white-bg",
-    mapbox_layers=[
-        {
-            "below": 'traces',
-            "sourcetype": "raster",
-            "source": [
-                "https://basemap.nationalmap.gov/arcgis/rest/services/USGSImageryOnly/MapServer/tile/{z}/{y}/{x}"
-            ]
-        }
-      ])
-fig2.update_layout(margin={"r":0,"t":0,"l":0,"b":1})
-#fig.show()
-import dash
-import dash_core_components as dcc
-import dash_html_components as html
-import uuid
-import plotly.graph_objects as go # or plotly.express as px
-#fig = go.Figure()
+df['text'] = df['admin'] + '<br>Complaints ' + (df['compliants']).astype(str)
+limits = [(0,3),(4,10),(11,20),(20,30)]
 
+fig2 = go.Figure()
+
+for i in range(len(limits)):
+    lim = limits[i]
+    df_sub = df[lim[0]:lim[1]]
+    df_sub= df
+    fig2.add_trace(go.Scattergeo(
+    locationmode = 'ISO-3',
+    lon = df_sub['lng'],
+    lat = df_sub['lat'],
+    text = df_sub['text'],
+    marker = dict(
+        size = df_sub['compliants']*80,
+        color = 'lightgreen',
+        line_color='rgb(40,40,40)',
+        line_width=0.5,
+        sizemode = 'area'
+    ),
+    name = '{0} - {1}'.format(lim[0],lim[1])))
+
+fig2.update_layout(
+        title_text = 'NPCI Statewise Complaints',
+        showlegend = True,
+        autosize=False,
+         width=1000,
+        height=1000,
+        geo = dict(
+            scope = 'asia',
+            landcolor = 'rgb(217, 217, 217)',
+        )
+    )
+
+#fig2.show()

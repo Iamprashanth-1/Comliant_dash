@@ -21,9 +21,7 @@ from dash.dependencies import Output, Input, State
 from dateutil import relativedelta
 from wordcloud import WordCloud, STOPWORDS
 from ldacomplaints import lda_analysis
-import jajo
 from jajo import fig1
-import geoloc
 from geoloc import fig2
 
 DATA_PATH = pathlib.Path(__file__).parent.resolve()
@@ -586,12 +584,12 @@ TOP_BANKS_PLOT = [
     ),
 ]
 CUSTOMER_LOCATION_PLOT = [
-    dbc.CardHeader(html.H5("LIST OF COMPLIANTS BASED ON STATES")),
+    dbc.CardHeader(html.H5("STATEWISE BAR GRAPH FOR COMPLAINTS")),
     dcc.Graph(figure=fig1)
                 
 ]
 CUSTOMER_LOCATION_MAP = [
-    dbc.CardHeader(html.H5("LIST OF COMPLIANTS")),
+    dbc.CardHeader(html.H5("STATE MAP COMPLIANTS BUBBLE")),
     dcc.Graph(figure=fig2)
                 
 ]
@@ -811,4 +809,4 @@ suppress_callback_exceptions=True
 
     #return merges(p-1)
 if __name__ == "__main__":
-    app.run_server(debug=True)
+    app.run_server(host='127.0.0.2',port='5050',debug=True)

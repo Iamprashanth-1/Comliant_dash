@@ -4,7 +4,7 @@ import dash_core_components as dcc
 import dash_html_components as html
 from collections import Counter
 import pandas as pd
-df= pd.read_csv('F:\dash-nlp-master\data\customer29.csv')
+df= pd.read_csv('data/customer29.csv')
 
 fig1 = go.Figure()
 s=[]
@@ -19,7 +19,7 @@ fig1.add_trace(
         x=b,
         y=a,
         marker=go.bar.Marker(
-            color="rgb(253, 240, 54)",
+            color="blue",
             line=dict(color="rgb(0, 0, 0)",
                       width=2)
         ),
