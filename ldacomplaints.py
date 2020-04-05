@@ -48,14 +48,14 @@ def lda_analysis(df, stop_words):
         return tokens
 
     # Clean up and take only rows where we have text
-    df = df[pd.notnull(df["data/Customer29.csv"])]
-    docs = list(df["data/Customer29.csv"].values)
+    df = df[pd.notnull(df["Consumer complaint narrative"])]
+    docs = list(df["Consumer complaint narrative"].values)
 
     punctuations = string.punctuation
 
     processed_docs = list(map(cleanup_text, docs))
     print("len(processed_docs)", len(processed_docs))
-    if len(processed_docs) < 11:
+    if len(processed_docs) < 3:
         print("INSUFFICIENT DOCS TO RUN LINEAR DISCRIMINANT ANALYSIS")
         return (None, None, None, None)
 

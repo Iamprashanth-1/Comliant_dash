@@ -105,9 +105,10 @@ def precompute_all_lda():
             }
 
             counter += 1
-        except:
+        except Exception as e:
             print("SOMETHING WENT HORRIBLY WRONG WITH BANK: ", bank)
             failed_banks.append(bank)
+            #print(e)
 
     with open("data/precomputed.json", "w+") as res_file:
         json.dump(results, res_file)

@@ -4,3 +4,12 @@
 *.json
 *.json
 *.json
+.mypy_cache/3.6/ldacomplaints.meta.json
+.mypy_cache/3.6/app.meta.json
+.mypy_cache/
+__pycache__/precomputing.cpython-36.pyc
+__pycache__/
+__pycache__/geoloc.cpython-36.pyc
+__pycache__/geoloc.cpython-36.pyc
+__pycache__/ldacomplaints.cpython-36.pyc
+__pycache__/precomputing.cpython-36.pyc

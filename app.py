@@ -56,6 +56,7 @@ ADDITIONAL_STOPWORDS = [
     "BOA",
     "Citi",
     "account",
+    'please'
 ]
 for stopword in ADDITIONAL_STOPWORDS:
     STOPWORDS.add(stopword)
@@ -63,7 +64,7 @@ for stopword in ADDITIONAL_STOPWORDS:
 """
 The aim with this dashboard is to demonstrate how Plotly's Dash framework
 can be used for NLP based data analysis. The dataset is open and contains
-consumer complaints from US banks ranging from 2013 to 2017.
+consumer complaints from NPCI.
 Users can select to run the dashboard with the whole dataset (which can be slow to run)
 or a smaller subset which then is evenly and consistently sampled accordingly.
 Once a data sample has been selected the user can select a bank to look into by
@@ -82,26 +83,15 @@ allows the user to look at specific time windows if there is desire to do so.
 To illustrate the usefulness of this dashboard we suggest looking at how the
 wordcloud and scatter plot changes from Equifax if 2017 is included in the plots
 or not.
-Another potentially interesting find is that Capital One has a common word
-other banks seem to lack, "Macy". It would appear that Capital One at some point
-teamed up with popular retailer Macy's to offer their services. This company
-might have been hugely popular and thus explaining it's high frequency of occurance
-in complaints, or perhaps there are other reasons explaining the data.
 Regardless of what caused these two mentioned outliers, it shows how a tool
 such as this can aid an analyst in finding potentially interesting things to
 dig deeper into.
 """
 
-"""
-#  Somewhat helpful functions
 
-"""
+#layout = go.Layout({"title": "data based on "})
 
-
-
-     #layout = go.Layout({"title": "data based on "})
-
-   # return merged
+# return merged
 
 
 def sample_data(dataframe, float_percent):
@@ -681,7 +671,7 @@ def update_bank_sample_plot(n_value, time_values):
     if time_values is None:
         return [{}, {"display": "block"}]
     n_float = float(n_value / 100)
-    bank_sample_count = 10
+    bank_sample_count = 20
     local_df = sample_data(GLOBAL_DF, n_float)
     min_date, max_date = time_slider_to_date(time_values)
     values_sample, counts_sample = calculate_bank_sample_data(
