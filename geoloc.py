@@ -43,7 +43,7 @@ with open(filename, 'w') as f:
 
 #print(tempfile)
         
-df = pd.read_json("data/in1.json", orient='records')
+df = pd.read_json("data/in.json", orient='records')
 
             
     #in_cities[population]

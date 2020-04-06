@@ -23,6 +23,8 @@ from wordcloud import WordCloud, STOPWORDS
 from ldacomplaints import lda_analysis
 from jajo import fig1
 from geoloc import fig2
+from geoloc_satellite_map import fig3
+from dudo import fig4
 
 DATA_PATH = pathlib.Path(__file__).parent.resolve()
 EXTERNAL_STYLESHEETS = ["https://codepen.io/chriddyp/pen/bWLwgP.css"]
@@ -580,9 +582,13 @@ CUSTOMER_LOCATION_PLOT = [
 ]
 CUSTOMER_LOCATION_MAP = [
     dbc.CardHeader(html.H5("STATE MAP COMPLIANTS BUBBLE")),
-    dcc.Graph(figure=fig2)
+    dcc.Graph(figure=fig3)
                 
 ]
+PIE_GRAPH_FASTAG=[
+    dbc.CardHeader(html.H5("RESOLVED ISSUES WITHIN 48hrs")),
+    dcc.Graph(figure=fig4)
+    ]
 
 BODY = dbc.Container(
     [
@@ -595,8 +601,10 @@ BODY = dbc.Container(
         ),
         dbc.Card(WORDCLOUD_PLOTS),
         dbc.Row([dbc.Col([dbc.Card(LDA_PLOTS)])], style={"marginTop": 50}),
-        dbc.Card(CUSTOMER_LOCATION_PLOT),
-        dbc.Card(CUSTOMER_LOCATION_MAP)
+        dbc.Row([dbc.Col([dbc.Card(CUSTOMER_LOCATION_PLOT)]),dbc.Col([dbc.Card(CUSTOMER_LOCATION_MAP)])]),
+        dbc.Card(PIE_GRAPH_FASTAG),
+       # dbc.Card(CUSTOMER_LOCATION_MAP),
+   
     ],
     className="mt-12",
 )

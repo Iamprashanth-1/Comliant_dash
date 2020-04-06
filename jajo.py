@@ -19,9 +19,9 @@ fig1.add_trace(
         x=b,
         y=a,
         marker=go.bar.Marker(
-            color="blue",
+            color="yellow",
             line=dict(color="rgb(0, 0, 0)",
-                      width=2)
+                      width=1)
         ),
         orientation="h",
     )
@@ -41,13 +41,13 @@ fig1.add_layout_image(
 # update layout properties
 fig1.update_layout(
     autosize=False,
-    height=800,
-    width=700,
+    height=600,
+    width=470,
     bargap=0.15,
     bargroupgap=0.1,
     barmode="stack",
     hovermode="x",
-    margin=dict(r=20, l=300, b=75, t=125),
+    margin=dict(r=20, l=300, b=45, t=100),
     title=("NPCI FASTAG COMPLIANTS<br>" +
            "<i>Based On States</i>"),
 )

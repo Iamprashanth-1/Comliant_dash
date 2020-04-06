@@ -19,7 +19,7 @@ sf=dict(Counter(s))
 a=list(sf.keys())
 b=list(sf.values())
 #print(a)
-filename="data/in - Copy.json"
+filename="data/in.json"
 with open(filename) as f:
     data = json.load(f)
     for i in range(len(data)):
@@ -51,9 +51,9 @@ in_cities = pd.read_json("data/in.json")
     #in_cities[population]
 #print(in_cities)
 
-fig2 = px.scatter_mapbox(in_cities, lat="lat", lon="lng", hover_name="admin", hover_data=["compliants"],
-                        color_discrete_sequence=["blue"], zoom=7, height=700)
-fig2.update_layout(
+fig3 = px.scatter_mapbox(in_cities, lat="lat", lon="lng", hover_name="admin", hover_data=["compliants"],
+                        color_discrete_sequence=["blue"], zoom=3.72, height=600,width=570)
+fig3.update_layout(
     mapbox_style="white-bg",
     mapbox_layers=[
         {
@@ -64,7 +64,7 @@ fig2.update_layout(
             ]
         }
       ])
-fig2.update_layout(margin={"r":0,"t":0,"l":0,"b":1})
-fig2.show()
+fig3.update_layout(margin={"r":1,"t":1,"l":1,"b":2})
+#fig2.show()
 
 
