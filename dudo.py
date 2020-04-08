@@ -55,7 +55,7 @@ for i in range(len(df['Date received'])):
             break
     aaa=int(ss[-4:])
     b.append(aaa)
-   # print(a,b)
+    #print(a,b)
 
     d=abs(date(a[2],a[0],a[1])-date(b[2],b[0],b[1]))
     
@@ -87,5 +87,17 @@ name='How they resolved'), 1, 2)
 fig5.update_traces(hoverinfo='label+percent', textinfo='value', textfont_size=20,
                   marker=dict(colors=colors, line=dict(color='#000000', width=2)))
 
-
+fig5.update_layout(
+    template="plotly_dark",
+    margin=dict(r=10, t=25, b=40, l=60),
+    annotations=[
+        dict(
+            text="Source: NONE",
+            showarrow=False,
+            xref="paper",
+            yref="paper",
+            x=0,
+            y=0)
+    ]
+)
 #fig5.update_layout(title_text='RESOLVED ISSUES WiTHIN hrs')

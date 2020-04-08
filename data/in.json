@@ -21,7 +21,7 @@
         "lat": "28.651952",
         "lng": "77.231495",
         "population": 13,
-        "compliants": 13
+        "compliants": 0
     },
     {
         "city": "Kolkata",
@@ -69,7 +69,7 @@
         "lat": "17.384052",
         "lng": "78.456355",
         "population": 3,
-        "compliants": 4
+        "compliants": 8
     },
     {
         "city": "Ahmad\u0101b\u0101d",
@@ -129,7 +129,7 @@
         "lat": "26.430066",
         "lng": "80.267176",
         "population": 14,
-        "compliants": 14
+        "compliants": 28
     },
     {
         "city": "R\u0101mpura",
@@ -153,7 +153,7 @@
         "lat": "26.839281",
         "lng": "80.923133",
         "population": 14,
-        "compliants": 14
+        "compliants": 28
     },
     {
         "city": "N\u0101ra",
@@ -237,7 +237,7 @@
         "lat": "30.912042",
         "lng": "75.853789",
         "population": 0,
-        "compliants": 0
+        "compliants": 2
     },
     {
         "city": "\u0100gra",
@@ -249,7 +249,7 @@
         "lat": "27.187935",
         "lng": "78.003944",
         "population": 14,
-        "compliants": 14
+        "compliants": 28
     },
     {
         "city": "Kaly\u0101n",
@@ -273,7 +273,7 @@
         "lat": "17.704052",
         "lng": "83.297663",
         "population": 3,
-        "compliants": 4
+        "compliants": 8
     },
     {
         "city": "Kochi",
@@ -285,7 +285,7 @@
         "lat": "9.947743",
         "lng": "76.253802",
         "population": 4,
-        "compliants": 4
+        "compliants": 8
     },
     {
         "city": "N\u0101sik",
@@ -309,7 +309,7 @@
         "lat": "28.980018",
         "lng": "77.706356",
         "population": 14,
-        "compliants": 14
+        "compliants": 28
     },
     {
         "city": "Far\u012bd\u0101b\u0101d",
@@ -333,7 +333,7 @@
         "lat": "25.31774",
         "lng": "83.005811",
         "population": 14,
-        "compliants": 14
+        "compliants": 28
     },
     {
         "city": "Gh\u0101zi\u0101b\u0101d",
@@ -345,7 +345,7 @@
         "lat": "28.665353",
         "lng": "77.439148",
         "population": 14,
-        "compliants": 14
+        "compliants": 28
     },
     {
         "city": "\u0100sansol",
@@ -429,7 +429,7 @@
         "lat": "31.622337",
         "lng": "74.875335",
         "population": 0,
-        "compliants": 0
+        "compliants": 2
     },
     {
         "city": "Warangal",
@@ -441,7 +441,7 @@
         "lat": "17.978423",
         "lng": "79.600209",
         "population": 3,
-        "compliants": 4
+        "compliants": 8
     },
     {
         "city": "Allah\u0101b\u0101d",
@@ -453,7 +453,7 @@
         "lat": "25.44478",
         "lng": "81.843217",
         "population": 14,
-        "compliants": 14
+        "compliants": 28
     },
     {
         "city": "Sr\u012bnagar",
@@ -537,7 +537,7 @@
         "lat": "26.176076",
         "lng": "91.762932",
         "population": 2,
-        "compliants": 2
+        "compliants": 6
     },
     {
         "city": "Chandigarh",
@@ -573,7 +573,7 @@
         "lat": "8.485498",
         "lng": "76.949238",
         "population": 4,
-        "compliants": 4
+        "compliants": 8
     },
     {
         "city": "Tiruchchir\u0101ppalli",
@@ -669,7 +669,7 @@
         "lat": "25.458872",
         "lng": "78.579943",
         "population": 14,
-        "compliants": 14
+        "compliants": 28
     },
     {
         "city": "Bareilly",
@@ -681,7 +681,7 @@
         "lat": "28.347023",
         "lng": "79.421934",
         "population": 14,
-        "compliants": 14
+        "compliants": 28
     },
     {
         "city": "Al\u012bgarh",
@@ -693,7 +693,7 @@
         "lat": "27.881453",
         "lng": "78.07464",
         "population": 14,
-        "compliants": 14
+        "compliants": 28
     },
     {
         "city": "Bhiwandi",
@@ -729,7 +729,7 @@
         "lat": "28.838931",
         "lng": "78.776838",
         "population": 14,
-        "compliants": 14
+        "compliants": 28
     },
     {
         "city": "Mangalore",
@@ -801,7 +801,7 @@
         "lat": "14.449918",
         "lng": "79.986967",
         "population": 3,
-        "compliants": 4
+        "compliants": 8
     },
     {
         "city": "Gop\u0101lpur",
@@ -813,7 +813,7 @@
         "lat": "26.735389",
         "lng": "83.38064",
         "population": 14,
-        "compliants": 14
+        "compliants": 28
     },
     {
         "city": "Shimoga",
@@ -993,7 +993,7 @@
         "lat": "16.299737",
         "lng": "80.457293",
         "population": 3,
-        "compliants": 4
+        "compliants": 8
     },
     {
         "city": "Shiliguri",
@@ -1053,7 +1053,7 @@
         "lat": "29.967896",
         "lng": "77.545221",
         "population": 14,
-        "compliants": 14
+        "compliants": 28
     },
     {
         "city": "Gulbarga",
@@ -1137,7 +1137,7 @@
         "lat": "15.828865",
         "lng": "78.036021",
         "population": 3,
-        "compliants": 4
+        "compliants": 8
     },
     {
         "city": "Gaya",
@@ -1185,7 +1185,7 @@
         "lat": "8.881131",
         "lng": "76.584694",
         "population": 4,
-        "compliants": 4
+        "compliants": 8
     },
     {
         "city": "Ahmadnagar",
@@ -1221,7 +1221,7 @@
         "lat": "18.673151",
         "lng": "78.10008",
         "population": 3,
-        "compliants": 4
+        "compliants": 8
     },
     {
         "city": "Parbhani",
@@ -1293,7 +1293,7 @@
         "lat": "29.470914",
         "lng": "77.703324",
         "population": 14,
-        "compliants": 14
+        "compliants": 28
     },
     {
         "city": "Muzaffarpur",
@@ -1317,7 +1317,7 @@
         "lat": "27.503501",
         "lng": "77.672145",
         "population": 14,
-        "compliants": 14
+        "compliants": 28
     },
     {
         "city": "Pati\u0101la",
@@ -1329,7 +1329,7 @@
         "lat": "30.336245",
         "lng": "76.392199",
         "population": 0,
-        "compliants": 0
+        "compliants": 2
     },
     {
         "city": "Saugor",
@@ -1365,7 +1365,7 @@
         "lat": "27.874116",
         "lng": "79.879327",
         "population": 14,
-        "compliants": 14
+        "compliants": 28
     },
     {
         "city": "New Delhi",
@@ -1377,7 +1377,7 @@
         "lat": "28.6",
         "lng": "77.2",
         "population": 13,
-        "compliants": 13
+        "compliants": 0
     },
     {
         "city": "Rohtak",
@@ -1425,7 +1425,7 @@
         "lat": "27.150917",
         "lng": "78.397808",
         "population": 14,
-        "compliants": 14
+        "compliants": 28
     },
     {
         "city": "R\u0101jahmundry",
@@ -1437,7 +1437,7 @@
         "lat": "17.005171",
         "lng": "81.777839",
         "population": 3,
-        "compliants": 4
+        "compliants": 8
     },
     {
         "city": "Barddham\u0101n",
@@ -1473,7 +1473,7 @@
         "lat": "28.804495",
         "lng": "79.040305",
         "population": 14,
-        "compliants": 14
+        "compliants": 28
     },
     {
         "city": "K\u0101kin\u0101da",
@@ -1485,7 +1485,7 @@
         "lat": "16.960361",
         "lng": "82.238086",
         "population": 3,
-        "compliants": 4
+        "compliants": 8
     },
     {
         "city": "P\u0101n\u012bpat",
@@ -1509,7 +1509,7 @@
         "lat": "17.247672",
         "lng": "80.143682",
         "population": 3,
-        "compliants": 4
+        "compliants": 8
     },
     {
         "city": "Bhuj",
@@ -1533,7 +1533,7 @@
         "lat": "18.436738",
         "lng": "79.13222",
         "population": 3,
-        "compliants": 4
+        "compliants": 8
     },
     {
         "city": "Tirupati",
@@ -1545,7 +1545,7 @@
         "lat": "13.635505",
         "lng": "79.419888",
         "population": 3,
-        "compliants": 4
+        "compliants": 8
     },
     {
         "city": "Hospet",
@@ -1629,7 +1629,7 @@
         "lat": "26.758236",
         "lng": "79.014875",
         "population": 14,
-        "compliants": 14
+        "compliants": 28
     },
     {
         "city": "R\u0101ich\u016br",
@@ -1653,7 +1653,7 @@
         "lat": "32.274842",
         "lng": "75.652865",
         "population": 0,
-        "compliants": 0
+        "compliants": 2
     },
     {
         "city": "Ch\u012br\u0101la",
@@ -1665,7 +1665,7 @@
         "lat": "15.823849",
         "lng": "80.352187",
         "population": 3,
-        "compliants": 4
+        "compliants": 8
     },
     {
         "city": "Son\u012bpat",
@@ -1689,7 +1689,7 @@
         "lat": "25.144902",
         "lng": "82.565335",
         "population": 14,
-        "compliants": 14
+        "compliants": 28
     },
     {
         "city": "H\u0101pur",
@@ -1701,7 +1701,7 @@
         "lat": "28.729845",
         "lng": "77.780681",
         "population": 14,
-        "compliants": 14
+        "compliants": 28
     },
     {
         "city": "Porbandar",
@@ -1809,7 +1809,7 @@
         "lat": "15.503565",
         "lng": "80.044541",
         "population": 3,
-        "compliants": 4
+        "compliants": 8
     },
     {
         "city": "Puri",
@@ -1857,7 +1857,7 @@
         "lat": "28.403922",
         "lng": "77.857731",
         "population": 14,
-        "compliants": 14
+        "compliants": 28
     },
     {
         "city": "Purnea",
@@ -1881,7 +1881,7 @@
         "lat": "14.7502",
         "lng": "78.548129",
         "population": 3,
-        "compliants": 4
+        "compliants": 8
     },
     {
         "city": "Gurgaon",
@@ -1917,7 +1917,7 @@
         "lat": "16.187466",
         "lng": "81.13888",
         "population": 3,
-        "compliants": 4
+        "compliants": 8
     },
     {
         "city": "Bhiw\u0101ni",
@@ -1941,7 +1941,7 @@
         "lat": "15.477994",
         "lng": "78.483605",
         "population": 3,
-        "compliants": 4
+        "compliants": 8
     },
     {
         "city": "Bhus\u0101val",
@@ -1965,7 +1965,7 @@
         "lat": "27.598203",
         "lng": "81.694709",
         "population": 14,
-        "compliants": 14
+        "compliants": 28
     },
     {
         "city": "Tonk",
@@ -2001,7 +2001,7 @@
         "lat": "18.11329",
         "lng": "83.397743",
         "population": 3,
-        "compliants": 4
+        "compliants": 8
     },
     {
         "city": "Vellore",
@@ -2025,7 +2025,7 @@
         "lat": "9.494647",
         "lng": "76.331108",
         "population": 4,
-        "compliants": 4
+        "compliants": 8
     },
     {
         "city": "Shimla",
@@ -2049,7 +2049,7 @@
         "lat": "13.828065",
         "lng": "77.491425",
         "population": 3,
-        "compliants": 4
+        "compliants": 8
     },
     {
         "city": "B\u0101ram\u016bla",
@@ -2073,7 +2073,7 @@
         "lat": "25.894283",
         "lng": "80.792104",
         "population": 14,
-        "compliants": 14
+        "compliants": 28
     },
     {
         "city": "Dibrugarh",
@@ -2085,7 +2085,7 @@
         "lat": "27.479888",
         "lng": "94.90837",
         "population": 2,
-        "compliants": 2
+        "compliants": 6
     },
     {
         "city": "Said\u0101pur",
@@ -2097,7 +2097,7 @@
         "lat": "27.598784",
         "lng": "80.75089",
         "population": 14,
-        "compliants": 14
+        "compliants": 28
     },
     {
         "city": "Navs\u0101ri",
@@ -2121,7 +2121,7 @@
         "lat": "28.038114",
         "lng": "79.126677",
         "population": 14,
-        "compliants": 14
+        "compliants": 28
     },
     {
         "city": "Cuddalore",
@@ -2145,7 +2145,7 @@
         "lat": "31.463218",
         "lng": "75.986418",
         "population": 0,
-        "compliants": 0
+        "compliants": 2
     },
     {
         "city": "Krishn\u0101puram",
@@ -2169,7 +2169,7 @@
         "lat": "26.775486",
         "lng": "82.150182",
         "population": 14,
-        "compliants": 14
+        "compliants": 28
     },
     {
         "city": "Silchar",
@@ -2181,7 +2181,7 @@
         "lat": "24.827327",
         "lng": "92.797868",
         "population": 2,
-        "compliants": 2
+        "compliants": 6
     },
     {
         "city": "Amb\u0101la",
@@ -2253,7 +2253,7 @@
         "lat": "28.631245",
         "lng": "79.804362",
         "population": 14,
-        "compliants": 14
+        "compliants": 28
     },
     {
         "city": "Abohar",
@@ -2265,7 +2265,7 @@
         "lat": "30.144533",
         "lng": "74.19552",
         "population": 0,
-        "compliants": 0
+        "compliants": 2
     },
     {
         "city": "Port Blair",
@@ -2301,7 +2301,7 @@
         "lat": "27.592698",
         "lng": "78.013843",
         "population": 14,
-        "compliants": 14
+        "compliants": 28
     },
     {
         "city": "V\u0101lp\u0101rai",
@@ -2349,7 +2349,7 @@
         "lat": "27.325739",
         "lng": "88.612155",
         "population": 2,
-        "compliants": 2
+        "compliants": 4
     },
     {
         "city": "Kar\u016br",
@@ -2373,7 +2373,7 @@
         "lat": "26.757509",
         "lng": "94.203055",
         "population": 2,
-        "compliants": 2
+        "compliants": 6
     },
     {
         "city": "Panaji",
@@ -2385,7 +2385,7 @@
         "lat": "15.498289",
         "lng": "73.824541",
         "population": 7,
-        "compliants": 7
+        "compliants": 14
     },
     {
         "city": "Saidpur",
@@ -2409,7 +2409,7 @@
         "lat": "26.633333",
         "lng": "92.8",
         "population": 2,
-        "compliants": 2
+        "compliants": 6
     },
     {
         "city": "Itanagar",
@@ -2469,7 +2469,7 @@
         "lat": "26.135638",
         "lng": "91.800688",
         "population": 2,
-        "compliants": 2
+        "compliants": 6
     },
     {
         "city": "Kavaratti",
@@ -2493,7 +2493,7 @@
         "lat": "11.248016",
         "lng": "75.780402",
         "population": 4,
-        "compliants": 4
+        "compliants": 8
     },
     {
         "city": "Kagazn\u0101g\u0101r",
@@ -2505,7 +2505,7 @@
         "lat": "19.331589",
         "lng": "79.466051",
         "population": 3,
-        "compliants": 4
+        "compliants": 8
     },
     {
         "city": "Jaipur",

@@ -6,28 +6,23 @@ from collections import Counter
 import json
 #in_cities = pd.read_csv("E:\in.csv")
 #print(us_cities)
-import dash
-import dash_core_components as dcc
-import dash_html_components as html
-import plotly.graph_objects as go
 import os
+import plotly.graph_objects as go
 import uuid
 
 
 import plotly.express as px
 df= pd.read_csv('data/customer29.csv')
 s=[]
-for i in df['State']:
-        s.append(i)
+for i in df['City']:
+    s.append(i)
 sf=dict(Counter(s))
 a=list(sf.keys())
 b=list(sf.values())
 #print(a)
-filename="data/in.json"
+filename="data/indi.json"
 with open(filename) as f:
     data = json.load(f)
-    for i in range(len(data)):
-        data[i]["compliants"] =0
     json.dump(data, open("data.json", "w"), indent = 4)
 with open(filename, 'r') as f:
     data = json.load(f)
@@ -36,7 +31,7 @@ with open(filename, 'r') as f:
        data[i]['compliants']=0
     for i in range(len(data)):
         for j in range(len(a)):
-            if data[i]['admin']==a[j]:
+            if data[i]['City']==a[j]:
                 data[i]['compliants']=b[j]
 
 #json.dump(data, open(f, "w"), indent = 4)
@@ -49,27 +44,35 @@ with open(filename, 'w') as f:
 
 #print(tempfile)
         
-in_cities = pd.read_json("data/in.json")
+in_cities = pd.read_json("data/indi.json")
 
-            
+fig9=go.Figure()
     #in_cities[population]
 #print(in_cities)
+import plotly.express as px
+px.set_mapbox_access_token('pk.eyJ1Ijoid2ViZXhwZXJ0c3VqZWV0IiwiYSI6ImNqdmh4MXM0dDAwMWs0NXFyNHkxc2o1eGwifQ.jgbBoS14uvv8i_lMrCQF5A')
+df = px.data.carshare()
+fig9 = px.scatter_mapbox(in_cities, lat="Lat", lon="Long", hover_name="City", hover_data=["compliants"],
+                        color_discrete_sequence=["red"], zoom=3.7, height=700)
 
-fig3 = px.scatter_mapbox(in_cities, lat="lat", lon="lng", hover_name="admin", hover_data=["compliants"],
-                        color_discrete_sequence=["blue"], zoom=3.72, height=600,width=570)
-fig3.update_layout(
-    mapbox_style="white-bg",
-    mapbox_layers=[
-        {
-            "below": 'traces',
-            "sourcetype": "raster",
-            "source": [
-                "https://api.mapbox.com/styles/v1/prashanth-reddy/ck8q89rc21jha1iqj2znnisqk.html?fresh=true&title=view&access_token=pk.eyJ1IjoicHJhc2hhbnRoLXJlZGR5IiwiYSI6ImNrOHE4NG41ZzAwemIza3A1a29uMTI5dmkifQ.gMkPHTgJU_mRp1cRBiiX3g"
-            ]
-        }
-      ])
-fig3.update_layout(margin={"r":1,"t":1,"l":1,"b":2})
-#fig3.show()
-
-
+fig9.update_layout(margin={"r":0,"t":0,"l":0,"b":1})
+fig9.update_layout(
+    template="plotly_dark",
+    annotations=[
+        dict(
+            text="Source: NOAA",
+            showarrow=False,
+            xref="paper",
+            yref="paper",
+            x=0,
+            y=0)
+    ]
+)
+#fig.show()
+import dash
+import dash_core_components as dcc
+import dash_html_components as html
+import uuid
+import plotly.graph_objects as go # or plotly.express as px
+#fig = go.Figure()
 

@@ -13,7 +13,7 @@ for i in df['State']:
 sf=dict(Counter(s))
 a=list(sf.keys())
 b=list(sf.values())
-
+#print(a,b)
 fig1.add_trace(
     go.Bar(
         x=b,
@@ -41,15 +41,28 @@ fig1.add_layout_image(
 # update layout properties
 fig1.update_layout(
     autosize=False,
-    height=600,
-    width=470,
+    height=700,
+    width=540,
     bargap=0.15,
     bargroupgap=0.1,
     barmode="stack",
     hovermode="x",
-    margin=dict(r=20, l=300, b=45, t=100),
+    margin=dict(r=20, l=300, b=100, t=100),
     title=("NPCI FASTAG COMPLIANTS<br>" +
            "<i>Based On States</i>"),
+
+)
+fig1.update_layout(
+    template="plotly_dark",
+    annotations=[
+        dict(
+            text="Source: NOAA",
+            showarrow=False,
+            xref="paper",
+            yref="paper",
+            x=0,
+            y=0)
+    ]
 )
 
 #fig.show()

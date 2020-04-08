@@ -25,6 +25,7 @@ from jajo import fig1
 from geoloc import fig2
 from geoloc_satellite_map import fig3
 from dudo import fig5
+from updatedgeo import fig9
 
 
 DATA_PATH = pathlib.Path(__file__).parent.resolve()
@@ -358,6 +359,17 @@ sections go into. This just makes it ever so slightly easier to find the right
 spot to add to or change without having to count too many brackets.
 """
 
+colors = {
+    'background': '#111111',
+    'text': '#7FDBFF'
+}
+app_colors = {
+    'background': '#0C0F0A',
+    'text': '#FFFFFF',
+    'sentiment-plot':'#41EAD4',
+    'volume-bar':'#FBFC74',
+    'someothercolor':'#FF206E',
+}
 NAVBAR = dbc.Navbar(
     children=[
         html.A(
@@ -568,7 +580,9 @@ TOP_BANKS_PLOT = [
                         color="warning",
                         style={"display": "none"},
                     ),
-                    dcc.Graph(id="bank-sample"),
+                    dcc.Graph(id="bank-sample",figure={'layout': {
+                'plot_bgcolor': colors['background'],
+                'paper_bgcolor': colors['background']}}),
                 ],
                 type="default",
             )
@@ -583,13 +597,20 @@ CUSTOMER_LOCATION_PLOT = [
 ]
 CUSTOMER_LOCATION_MAP = [
     dbc.CardHeader(html.H5("STATE MAP COMPLIANTS BUBBLE")),
-    dcc.Graph(figure=fig3)
+    dcc.Graph(figure=fig9)
                 
 ]
 PIE_GRAPH_FASTAG=[
     dbc.CardHeader(html.H5("RESOLVED ISSUES WITHIN 48hrs and HOW THEY ARE SUBMITTED")),
     dcc.Graph(figure=fig5)
     ]
+sentiment_colors = {-1:"#EE6055",
+                    -0.5:"#FDE74C",
+                     0:"#FFE6AC",
+                     0.5:"#D0F2DF",
+                     1:"#9CEC5B",}
+
+
 
 BODY = dbc.Container(
     [
@@ -598,10 +619,10 @@ BODY = dbc.Container(
                 dbc.Col(LEFT_COLUMN, md=4, align="center"),
                 dbc.Col(dbc.Card(TOP_BANKS_PLOT), md=8),
             ],
-            style={"marginTop": 30},
+            style={'marginTop':30},
         ),
         dbc.Card(WORDCLOUD_PLOTS),
-        dbc.Row([dbc.Col([dbc.Card(LDA_PLOTS)])], style={"marginTop": 50}),
+        dbc.Row([dbc.Col([dbc.Card(LDA_PLOTS)])], style={'marginTop':30}),
         dbc.Card(PIE_GRAPH_FASTAG),
         dbc.Row([dbc.Col([dbc.Card(CUSTOMER_LOCATION_PLOT)]),dbc.Col([dbc.Card(CUSTOMER_LOCATION_MAP)])]),
         #dbc.Card(PIE_GRAPH_FASTAG),
