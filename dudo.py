@@ -13,7 +13,7 @@ from plotly.subplots import make_subplots
 #import jajo 
 from collections import Counter
 fig5= go.Figure()
-df= pd.read_csv('F:\Comliant_dash\data\customer29.csv')
+df= pd.read_csv('data/customer29.csv')
 #print(df['Date received'][0])
 rr=df["Submitted via"]
 poi=[]

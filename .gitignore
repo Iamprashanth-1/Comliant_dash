@@ -13,3 +13,6 @@ __pycache__/geoloc.cpython-36.pyc
 __pycache__/geoloc.cpython-36.pyc
 __pycache__/ldacomplaints.cpython-36.pyc
 __pycache__/precomputing.cpython-36.pyc
+*.json
+*.pyc
+*.pyc
