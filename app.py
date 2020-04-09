@@ -26,6 +26,7 @@ from geoloc import fig2
 from geoloc_satellite_map import fig3
 from dudo import fig5
 from updatedgeo import fig9
+from Scatt import fig7
 
 
 DATA_PATH = pathlib.Path(__file__).parent.resolve()
@@ -604,6 +605,10 @@ PIE_GRAPH_FASTAG=[
     dbc.CardHeader(html.H5("RESOLVED ISSUES WITHIN 48hrs and HOW THEY ARE SUBMITTED")),
     dcc.Graph(figure=fig5)
     ]
+SCATTER_GRAPH=[
+    dbc.CardHeader(html.H5("DAILY COMPLIANTS")),
+    dcc.Graph(figure=fig7)
+    ]
 sentiment_colors = {-1:"#EE6055",
                     -0.5:"#FDE74C",
                      0:"#FFE6AC",
@@ -624,6 +629,7 @@ BODY = dbc.Container(
         dbc.Card(WORDCLOUD_PLOTS),
         dbc.Row([dbc.Col([dbc.Card(LDA_PLOTS)])], style={'marginTop':30}),
         dbc.Card(PIE_GRAPH_FASTAG),
+        dbc.Card(SCATTER_GRAPH),
         dbc.Row([dbc.Col([dbc.Card(CUSTOMER_LOCATION_PLOT)]),dbc.Col([dbc.Card(CUSTOMER_LOCATION_MAP)])]),
         #dbc.Card(PIE_GRAPH_FASTAG),
        # dbc.Card(CUSTOMER_LOCATION_MAP),
