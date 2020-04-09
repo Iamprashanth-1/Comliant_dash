@@ -6,7 +6,7 @@ import plotly.express as px
 import dash_bootstrap_components as dbc
 fig7=go.Figure()
 
-dff= pd.read_csv('E:\customer29.csv')
+dff= pd.read_csv('data/customer29.csv')
 c=[]
 for kk in dff['Date received']:
     c.append(kk)
