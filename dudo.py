@@ -13,7 +13,7 @@ from plotly.subplots import make_subplots
 #import jajo 
 from collections import Counter
 fig5= go.Figure()
-df= pd.read_csv('F:\Comliant_dash\data\customer29.csv')
+df= pd.read_csv('data/customer29.csv')
 #print(df['Date received'][0])
 rr=df["Submitted via"]
 poi=[]
@@ -70,8 +70,8 @@ for i in range(len(df['Date received'])):
 lol=list(hoi.keys())
 mol=list(hoi.values())
 # Create figure
-colors = ['gold', 'mediumturquoise', 'darkorange', 'lightgreen','red','black','brown','green','lightblue','tan']
-
+colors = ['pink', 'mediumturquoise', 'darkorange', 'lightgreen']
+colors1=['red','yellow','brown','grey','blue','tan']
 
 # Disable the autosize on double click because it adds unwanted margins around the image
 # More detail: https://plotly.com/python/configuration-options/
@@ -85,14 +85,14 @@ fig5.update_traces(hoverinfo='label+percent', textinfo='value', textfont_size=20
 fig5.add_trace(go.Pie(labels=lol, values=mol,sort=False, scalegroup='one',
 name='How they resolved'), 1, 2)
 fig5.update_traces(hoverinfo='label+percent', textinfo='value', textfont_size=20,
-                  marker=dict(colors=colors, line=dict(color='#000000', width=2)))
+                  marker=dict(colors=colors1, line=dict(color='#000000', width=2)))
 
 fig5.update_layout(
     template="plotly_dark",
     margin=dict(r=10, t=25, b=40, l=60),
     annotations=[
         dict(
-            text="Source: NONE",
+            text="Source: NPCI",
             showarrow=False,
             xref="paper",
             yref="paper",

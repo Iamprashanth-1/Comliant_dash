@@ -30,7 +30,8 @@ from Scatt import fig7
 
 
 DATA_PATH = pathlib.Path(__file__).parent.resolve()
-EXTERNAL_STYLESHEETS = ["https://codepen.io/chriddyp/pen/bWLwgP.css"]
+#EXTERNAL_STYLESHEETS = ["https://codepen.io/chriddyp/pen/bWLwgP.css"]
+EXTERNAL_STYLESHEETS = ["static/mainpage.css"]
 #FILENAME = "data/customer_complaints_narrative_sample.csv"
 FILENAME = "data/customer29.csv"
 FILENAME_PRECOMPUTED = "data/precomputed.json"
@@ -597,12 +598,12 @@ CUSTOMER_LOCATION_PLOT = [
                 
 ]
 CUSTOMER_LOCATION_MAP = [
-    dbc.CardHeader(html.H5("STATE MAP COMPLIANTS BUBBLE")),
+    dbc.CardHeader(html.H5("CITY WISE MAP COMPLIANTS BUBBLE")),
     dcc.Graph(figure=fig9)
                 
 ]
 PIE_GRAPH_FASTAG=[
-    dbc.CardHeader(html.H5("RESOLVED ISSUES WITHIN 48hrs and HOW THEY ARE SUBMITTED")),
+    dbc.CardHeader(html.H5("RESOLVED ISSUES WITHIN TIMEFRAME AND HOW THEY ARE SUBMITTED")),
     dcc.Graph(figure=fig5)
     ]
 SCATTER_GRAPH=[
