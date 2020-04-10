@@ -21,11 +21,14 @@ from dash.dependencies import Output, Input, State
 from dateutil import relativedelta
 from wordcloud import WordCloud, STOPWORDS
 from ldacomplaints import lda_analysis
-from jajo import fig1
+from jajo import statecity
 from geoloc import fig2
 from geoloc_satellite_map import fig3
-from dudo import fig5
+import dudo
+from Scatt import scattd
+from dudo import dudos
 from updatedgeo import fig9
+dff= pd.read_csv('data/customer29.csv')
 
 
 DATA_PATH = pathlib.Path(__file__).parent.resolve()
@@ -36,6 +39,7 @@ FILENAME = "data/customer29.csv"
 FILENAME_PRECOMPUTED = "data/precomputed.json"
 #PLOTLY_LOGO = "https://images.plot.ly/logo/new-branding/plotly-logomark.png"
 PLOTLY_LOGO= "assets/npci logo.jpg"
+
 GLOBAL_DF = pd.read_csv(DATA_PATH.joinpath(FILENAME), header=0)
 with open(DATA_PATH.joinpath(FILENAME_PRECOMPUTED)) as precomputed_file:
     PRECOMPUTED_LDA = json.load(precomputed_file)
@@ -360,6 +364,8 @@ sections go into. This just makes it ever so slightly easier to find the right
 spot to add to or change without having to count too many brackets.
 """
 
+
+
 colors = {
     'background': '#111111',
     'text': '#7FDBFF'
@@ -593,7 +599,7 @@ TOP_BANKS_PLOT = [
 ]
 CUSTOMER_LOCATION_PLOT = [
     dbc.CardHeader(html.H5("STATEWISE BAR GRAPH FOR COMPLAINTS")),
-    dcc.Graph(figure=fig1)
+    dcc.Graph(id='barsfig')
                 
 ]
 CUSTOMER_LOCATION_MAP = [
@@ -603,7 +609,11 @@ CUSTOMER_LOCATION_MAP = [
 ]
 PIE_GRAPH_FASTAG=[
     dbc.CardHeader(html.H5("RESOLVED ISSUES WITHIN TIMEFRAME AND HOW THEY ARE SUBMITTED")),
-    dcc.Graph(figure=fig5)
+    dcc.Graph(id='piefig')
+    ]
+SCATT_GRAPH=[
+     dbc.CardHeader(html.H5("DAILY COMPLIANTS")),
+    dcc.Graph(id='scattfig')
     ]
 sentiment_colors = {-1:"#EE6055",
                     -0.5:"#FDE74C",
@@ -625,6 +635,7 @@ BODY = dbc.Container(
         dbc.Card(WORDCLOUD_PLOTS),
         dbc.Row([dbc.Col([dbc.Card(LDA_PLOTS)])], style={'marginTop':30}),
         dbc.Card(PIE_GRAPH_FASTAG),
+        dbc.Card(SCATT_GRAPH),
         dbc.Row([dbc.Col([dbc.Card(CUSTOMER_LOCATION_PLOT)]),dbc.Col([dbc.Card(CUSTOMER_LOCATION_MAP)])]),
         #dbc.Card(PIE_GRAPH_FASTAG),
        # dbc.Card(CUSTOMER_LOCATION_MAP),
@@ -805,21 +816,57 @@ def filter_table_on_scatter_click(tsne_click, current_filter):
         return (filter_query, {"display": "block"})
     return ["", {"display": "none"}]
 
-@app.callback(Output("bank-drop", "value"), [Input("bank-sample", "clickData")])
+@app.callback(Output("piefig", "figure"), [Input("bank-drop", "value")])
 
 #ef uuu(customer_location):
    # return ["", {"display": "none"}]
 
 
+def piecharts(valu_drop):
+    datereceived=[]
+    datesent=[]
+    submir=[]
+    for i in range(len(dff['Company'])):
 
+        if dff['Company'][i]==valu_drop:
+           # print(i)
+            datereceived.append(dff['Date received'][i])
+            datesent.append(dff['Date sent to company'][i])
+            submir.append(dff['Submitted via'][i])
+    p=dudos(datereceived,datesent,submir)
+    #print(datereceived)
+    return p
+
+@app.callback(Output("barsfig", "figure"), [Input("bank-drop", "value")])
+def bargraphstates(valw):
+    statess=[]
+    for i in range(len(dff['Company'])):
+        if dff['Company'][i]==valw:
+            statess.append(dff['State'][i])
+    gim=statecity(statess)
+    return gim
+@app.callback(Output("scattfig", "figure"), [Input("bank-drop", "value")])
+def scatti(valu_d):
+    datereceive=[]
+    for i in range(len(dff['Company'])):
+        if dff['Company'][i]==valu_d:
+            datereceive.append(dff['Date received'][i])
+    mpm=scattd(datereceive)
+    return mpm
+
+@app.callback(Output("bank-drop", "value"), [Input("bank-sample", "clickData")])
 #@app.callback(Output("merged", "value"), [Input("component_property","clickData")])
 def update_bank_drop_on_click(value):
     """ TODO """
     if value is not None:
         selected_bank = value["points"][0]["x"]
         return selected_bank
-    return "ICICI Bank, INC."
-suppress_callback_exceptions=True
+    #return "ICICI Bank, INC."
+piecharts(update_bank_drop_on_click)
+bargraphstates(update_bank_drop_on_click)
+scatti(update_bank_drop_on_click)
+
+#suppress_callback_exceptions=True
 #try:
     #@app.callback(Output("frequenc_figure", "figure"))
 #except:
