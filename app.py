@@ -27,7 +27,7 @@ from geoloc_satellite_map import fig3
 import dudo
 from Scatt import scattd
 from dudo import dudos
-from updatedgeo import fig9
+from updatedgeo import geos
 dff= pd.read_csv('data/customer29.csv')
 
 
@@ -604,7 +604,7 @@ CUSTOMER_LOCATION_PLOT = [
 ]
 CUSTOMER_LOCATION_MAP = [
     dbc.CardHeader(html.H5("CITY WISE MAP COMPLIANTS BUBBLE")),
-    dcc.Graph(figure=fig9)
+    dcc.Graph(id='geofig')
                 
 ]
 PIE_GRAPH_FASTAG=[
@@ -843,6 +843,8 @@ def bargraphstates(valw):
     for i in range(len(dff['Company'])):
         if dff['Company'][i]==valw:
             statess.append(dff['State'][i])
+
+    print(statess)
     gim=statecity(statess)
     return gim
 @app.callback(Output("scattfig", "figure"), [Input("bank-drop", "value")])
@@ -853,6 +855,16 @@ def scatti(valu_d):
             datereceive.append(dff['Date received'][i])
     mpm=scattd(datereceive)
     return mpm
+@app.callback(Output("geofig", "figure"), [Input("bank-drop", "value")])
+def customermap(va_d):
+    cities=[]
+    for i in range(len(dff['Company'])):
+        if dff['Company'][i]==va_d:
+            cities.append(dff['City'][i])
+    sgm=geos(cities)
+    return sgm
+
+
 
 @app.callback(Output("bank-drop", "value"), [Input("bank-sample", "clickData")])
 #@app.callback(Output("merged", "value"), [Input("component_property","clickData")])
@@ -865,6 +877,7 @@ def update_bank_drop_on_click(value):
 piecharts(update_bank_drop_on_click)
 bargraphstates(update_bank_drop_on_click)
 scatti(update_bank_drop_on_click)
+customermap(update_bank_drop_on_click)
 
 #suppress_callback_exceptions=True
 #try:

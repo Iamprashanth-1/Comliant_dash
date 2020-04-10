@@ -43,7 +43,7 @@ def statecity(pl):
     fig1.update_layout(
         autosize=False,
         height=700,
-        width=540,
+        width=500,
         bargap=0.15,
         bargroupgap=0.1,
         barmode="stack",
@@ -57,7 +57,7 @@ def statecity(pl):
         template="plotly_dark",
         annotations=[
             dict(
-                text="Source: NOAA",
+                text="Source: NPCI",
                 showarrow=False,
                 xref="paper",
                 yref="paper",
@@ -65,6 +65,7 @@ def statecity(pl):
                 y=0)
         ]
     )
+    return fig1
 
 #fig.show()
 #app = dash.Dash()

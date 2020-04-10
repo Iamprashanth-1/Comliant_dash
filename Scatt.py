@@ -46,6 +46,7 @@ def scattd(kl):
 
 
     fig7 =px.line(dif,x='Date',y='compliants',title='Time Series with Range Slider and Selectors')
+    #fig = go.Figure(data=[go.Scatter(x=x, y=[1, 3, 6])])
 
     fig7.update_xaxes(
         rangeslider_visible=True,
