@@ -817,7 +817,7 @@ def comp_bigram_comparisons(comp_first, comp_second):
     )
     fig.update_layout(legend=dict(x=0.1, y=1.1), legend_orientation="h")
     fig.update_yaxes(title="", showticklabels=False)
-    fig.data[0]["hovertemplate"] = fig.data[0]["hovertemplate"][:-14]
+    #fig.data[0]["hovertemplate"] = fig.data[0]["hovertemplate"][:-14]
     return fig
 
 
