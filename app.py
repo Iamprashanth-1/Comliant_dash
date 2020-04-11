@@ -625,6 +625,12 @@ PIE_GRAPH_FASTAG=[
     dbc.CardHeader(html.H5("RESOLVED ISSUES WITHIN TIMEFRAME AND HOW THEY ARE SUBMITTED")),
     dcc.Graph(id="piechart")
     ]
+
+Complaint_word=[
+    dbc.CardHeader(html.H5("Complain counts by length")),
+    dcc.Graph(id="complaint_word_count")
+    ]
+
 SCATT_GRAPH=[
      dbc.CardHeader(html.H5("DAILY COMPLIANTS")),
     dcc.Graph(figure=fig7) 
@@ -744,6 +750,7 @@ BODY = dbc.Container(
         dbc.Row([dbc.Col([dbc.Card(LDA_PLOTS)])], style={'marginTop':30}),
         dbc.Card(PIE_GRAPH_FASTAG),
         dbc.Card(SCATT_GRAPH),
+        dbc.Card(Complaint_word),
         dbc.Row([dbc.Col([dbc.Card(CUSTOMER_LOCATION_PLOT)]),dbc.Col([dbc.Card(CUSTOMER_LOCATION_MAP)])]),
         #dbc.Card(PIE_GRAPH_FASTAG),
         # dbc.Card(CUSTOMER_LOCATION_MAP),
@@ -984,6 +991,29 @@ def filter_table_on_scatter_click(tsne_click, current_filter):
         return (filter_query, {"display": "block"})
     return ["", {"display": "none"}]
 
+
+@app.callback(Output("complaint_word_count", "figure"), [Input("bank-drop", "value")])
+def complaint_word_count(val):
+    # Complaints by words
+
+    comp_df= dff[dff['Company']==val]
+
+    fig = px.histogram(
+        comp_df,
+        x="Words_clipped",
+        template="plotly_white",
+        title="Complain counts by length",
+    )
+    fig.update_xaxes(
+        categoryorder="total descending",
+        title="Number of words (clipped at 1000 words)",
+    ).update_yaxes(title="Number of complaints")
+    fig.update_layout(width=1200, height=500)
+    
+    return fig
+
+
+
 @app.callback(Output("piechart", "figure"), [Input("bank-drop", "value")])
 
 def piecharts(valu_drop):
@@ -1042,6 +1072,7 @@ piecharts(update_bank_drop_on_click)
 bargraphstates(update_bank_drop_on_click)
 #scatti(update_bank_drop_on_click)
 customermap(update_bank_drop_on_click)
+complaint_word_count(update_bank_drop_on_click)
 
 #suppress_callback_exceptions=True
 #try:

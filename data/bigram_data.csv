@@ -1,4 +1,4 @@
-,ngram,count,"EQUIFAX, INC.","TRANSUNION INTERMEDIATE HOLDINGS, INC.",Experian Information Solutions Inc.,WELLS FARGO & COMPANY,"BANK OF AMERICA, NATIONAL ASSOCIATION","Navient Solutions, LLC.","CITIBANK, N.A.",JPMORGAN CHASE & CO.,CAPITAL ONE FINANCIAL CORPORATION,SYNCHRONY FINANCIAL
+,ngram,count,Axis bank LTD,Fino payment bank,Union bank,HDFC bank,IDBI Bank,Syndicate bank,Yes bank,South Indian bank,Paytm payments bank,State bank of india
 0,credit_report,7036,827,655,696,70,93,63,89,82,98,69
 1,credit_card,3577,112,96,117,92,144,19,262,194,175,119
 2,make_payment,2227,19,20,30,80,71,132,88,51,51,41
