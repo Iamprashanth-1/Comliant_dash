@@ -20,7 +20,7 @@ def statecity(pl):
             x=b,
             y=a,
             marker=go.bar.Marker(
-                color="yellow",
+                color="blue",
                 line=dict(color="rgb(0, 0, 0)",
                           width=1)
             ),
@@ -48,7 +48,7 @@ def statecity(pl):
         bargroupgap=0.1,
         barmode="stack",
         hovermode="x",
-        margin=dict(r=10, l=300, b=200, t=100),
+        margin=dict(r=200, l=300, b=200, t=100),
         title=("NPCI FASTAG COMPLIANTS<br>" +
                "<i>Based On States</i>"),
 
