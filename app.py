@@ -25,7 +25,7 @@ from jajo import statecity
 from geoloc import fig2
 from geoloc_satellite_map import fig3
 import dudo
-from Scatt import scattd
+from Scatt import fig7
 from dudo import dudos
 from updatedgeo import geos
 import plotly.express as px
@@ -627,7 +627,7 @@ PIE_GRAPH_FASTAG=[
     ]
 SCATT_GRAPH=[
      dbc.CardHeader(html.H5("DAILY COMPLIANTS")),
-    dcc.Graph(id='scattfig')
+    dcc.Graph(figure=fig7) 
     ]
 sentiment_colors = {-1:"#EE6055",
                     -0.5:"#FDE74C",
@@ -817,7 +817,7 @@ def comp_bigram_comparisons(comp_first, comp_second):
     )
     fig.update_layout(legend=dict(x=0.1, y=1.1), legend_orientation="h")
     fig.update_yaxes(title="", showticklabels=False)
-    fig.data[0]["hovertemplate"] = fig.data[0]["hovertemplate"][:-14]
+    #fig.data[0]["hovertemplate"] = fig.data[0]["hovertemplate"][:-14]
     return fig
 
 
@@ -1011,14 +1011,14 @@ def bargraphstates(valw):
     print(statess)
     gim=statecity(statess)
     return gim
-@app.callback(Output("scattfig", "figure"), [Input("bank-drop", "value")])
-def scatti(valu_d):
-    datereceive=[]
-    for i in range(len(dff['Company'])):
-        if dff['Company'][i]==valu_d:
-            datereceive.append(dff['Date received'][i])
-    mpm=scattd(datereceive)
-    return mpm
+#@app.callback(Output("scattfig", "figure"), [Input("bank-drop", "value")])
+#def scatti(valu_d):
+   # datereceive=[]
+    #for i in range(len(dff['Company'])):
+     #   if dff['Company'][i]==valu_d:
+      #      datereceive.append(dff['Date received'][i])
+   # mpm=scattd(datereceive)
+    #return mpm
 @app.callback(Output("geofig", "figure"), [Input("bank-drop", "value")])
 def customermap(va_d):
     cities=[]
@@ -1040,7 +1040,7 @@ def update_bank_drop_on_click(value):
     #return "ICICI Bank, INC."
 piecharts(update_bank_drop_on_click)
 bargraphstates(update_bank_drop_on_click)
-scatti(update_bank_drop_on_click)
+#scatti(update_bank_drop_on_click)
 customermap(update_bank_drop_on_click)
 
 #suppress_callback_exceptions=True

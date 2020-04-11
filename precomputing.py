@@ -8,7 +8,7 @@ import json
 DATA_PATH = pathlib.Path(__file__).parent.resolve()
 EXTERNAL_STYLESHEETS = ["https://codepen.io/chriddyp/pen/bWLwgP.css"]
 FILENAME = "data/customer29.csv"
-GLOBAL_DF = pd.read_csv(DATA_PATH.joinpath(FILENAME), header=0)
+GLOBAL_DF = pd.read_csv(DATA_PATH.joinpath(FILENAME),header=0)
 
 """
 In order to make the graphs more useful we decided to prevent some words from being included

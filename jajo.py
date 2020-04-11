@@ -42,8 +42,8 @@ def statecity(pl):
     # update layout properties
     fig1.update_layout(
         autosize=False,
-        height=500,
-        width=150,
+        height=700,
+        width=535,
         bargap=0.15,
         bargroupgap=0.1,
         barmode="stack",
