@@ -48,7 +48,7 @@ def statecity(pl):
         bargroupgap=0.1,
         barmode="stack",
         hovermode="x",
-        margin=dict(r=10, l=300, b=200, t=100),
+        margin=dict(r=1, l=10, b=10, t=100),
         title=("NPCI FASTAG COMPLIANTS<br>" +
                "<i>Based On States</i>"),
 

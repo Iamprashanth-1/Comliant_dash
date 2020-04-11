@@ -22,7 +22,7 @@ from dateutil import relativedelta
 from wordcloud import WordCloud, STOPWORDS
 from ldacomplaints import lda_analysis
 from jajo import statecity
-from geoloc import fig2
+#from geoloc import fig2
 from geoloc_satellite_map import fig3
 import dudo
 from Scatt import fig7
@@ -1008,7 +1008,7 @@ def bargraphstates(valw):
         if dff['Company'][i]==valw:
             statess.append(dff['State'][i])
 
-    print(statess)
+    #print(statess)
     gim=statecity(statess)
     return gim
 #@app.callback(Output("scattfig", "figure"), [Input("bank-drop", "value")])

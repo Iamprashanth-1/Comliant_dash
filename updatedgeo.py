@@ -59,7 +59,7 @@ def geos(ngf):
             template="plotly_dark",
             annotations=[
                 dict(
-                    text="Source: NOAA",
+                    text="Source: NPCI",
                     showarrow=False,
                     xref="paper",
                     yref="paper",
