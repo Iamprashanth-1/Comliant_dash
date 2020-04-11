@@ -42,13 +42,13 @@ def statecity(pl):
     # update layout properties
     fig1.update_layout(
         autosize=False,
-        height=700,
-        width=500,
+        height=500,
+        width=150,
         bargap=0.15,
         bargroupgap=0.1,
         barmode="stack",
         hovermode="x",
-        margin=dict(r=20, l=300, b=100, t=100),
+        margin=dict(r=10, l=300, b=200, t=100),
         title=("NPCI FASTAG COMPLIANTS<br>" +
                "<i>Based On States</i>"),
 

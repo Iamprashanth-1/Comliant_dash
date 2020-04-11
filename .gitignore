@@ -19,3 +19,6 @@ __pycache__/precomputing.cpython-36.pyc
 *.json
 *.json
 *.json
+*.pyc
+*.json
+*.pyc
