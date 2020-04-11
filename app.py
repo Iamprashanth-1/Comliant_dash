@@ -1000,7 +1000,7 @@ def complaint_word_count(val):
 
     fig = px.histogram(
         comp_df,
-        x="Words_clipped",
+        x="Company",
         template="plotly_white",
         title="Complain counts by length",
     )
