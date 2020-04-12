@@ -13,13 +13,14 @@ for kk in dff['Date received']:
 dd=dict(Counter(c))
 mm=list(dd.values())
 hg=list(dd.keys())
+kd=hg[0]
 #print(dd)
 pp=[]
 ee=[]
 for i in range(len(hg)):
     a=[]
-    s=hg[i]
-    #print(s[1])
+    s=str(hg[i])
+   # print(s)
     for j in range(len(s)):
         if s[j]=='-':
             a.append(int(s[:j]))
