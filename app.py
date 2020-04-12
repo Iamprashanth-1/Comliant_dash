@@ -21,13 +21,13 @@ from dash.dependencies import Output, Input, State
 from dateutil import relativedelta
 from wordcloud import WordCloud, STOPWORDS
 from ldacomplaints import lda_analysis
-from jajo import statecity
+from State_wise_compliants import statecity
 #from geoloc import fig2
-from geoloc_satellite_map import fig3
-import dudo
-from Scatt import fig7
-from dudo import dudos
-from updatedgeo import geos
+#from geoloc_satellite_map import fig3
+import piechar_compliants
+from Daily_compliants import fig7
+from piechar_compliants import dudos
+from cities_compliants_geo import geos
 import plotly.express as px
 from sklearn.manifold import TSNE
 
