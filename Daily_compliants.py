@@ -70,10 +70,3 @@ fig7.update_layout(
 
 )
 fig7.update_xaxes(rangeslider_visible=True) 
-import dash
-import dash_core_components as dcc
-import dash_html_components as html
-import uuid
-import plotly.graph_objects as go # or plotly.express as px
-#fig = go.Figure()
-

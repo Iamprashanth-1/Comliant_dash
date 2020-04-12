@@ -57,7 +57,7 @@ def statecity(pl):
         template="plotly_dark",
         annotations=[
             dict(
-                text="Source: NPCI",
+                text="",
                 showarrow=False,
                 xref="paper",
                 yref="paper",
