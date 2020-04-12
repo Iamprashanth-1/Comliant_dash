@@ -20,7 +20,7 @@ def statecity(pl):
             x=b,
             y=a,
             marker=go.bar.Marker(
-                color="blue",
+                color="yellow",
                 line=dict(color="rgb(0, 0, 0)",
                           width=1)
             ),

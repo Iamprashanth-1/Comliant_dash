@@ -72,7 +72,7 @@ def dudos(thug,life,idil):
     # Create figure
     colors = ['pink', 'mediumturquoise', 'darkorange', 'lightgreen']
     colors1=['red','yellow','brown','grey','blue','tan']
-
+    colo=colors+colors1
     # Disable the autosize on double click because it adds unwanted margins around the image
     # More detail: https://plotly.com/python/configuration-options/
     #fig.show(config={'doubleClick': 'reset'})
@@ -80,12 +80,12 @@ def dudos(thug,life,idil):
     #subplot_titles=['Resolved within', 'How they submitted'])
     fig5.add_trace(go.Pie(labels=['Resolved within 24hrs','resolved within 48hrs','Unresolved'], values=[cc,sss,mm],sort=False, scalegroup='one',
     name='Resolved within'), 1, 1)
-    fig5.update_traces(hoverinfo='label+percent', textinfo='value', textfont_size=20,
-                      marker=dict(colors=colors, line=dict(color='#000000', width=2)))
+   # fig5.update_traces(hoverinfo='label+percent', textinfo='value', textfont_size=20,
+                    #  marker=dict(colors=colors, line=dict(color='#000000', width=2)))
     fig5.add_trace(go.Pie(labels=lol, values=mol,sort=False, scalegroup='one',
     name='How they resolved'), 1, 2)
     fig5.update_traces(hoverinfo='label+percent', textinfo='value', textfont_size=20,
-                      marker=dict(colors=colors1, line=dict(color='#000000', width=2)))
+                      marker=dict(colors=colo, line=dict(color='#000000', width=2)))
 
     fig5.update_layout(
         template="plotly_dark",
